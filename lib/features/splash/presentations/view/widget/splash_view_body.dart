@@ -1,6 +1,10 @@
+
 import 'package:bookly_app/core/utils/assets.dart';
-import 'package:bookly_app/features/presentations/view/widget/sliding_text.dart';
+import 'package:bookly_app/features/splash/presentations/view/widget/sliding_text.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/utils/app_route.dart';
+
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -11,17 +15,20 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
-  late AnimationController  animationController;
+  late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
-
 
   @override
   void initState() {
     super.initState();
 
     initSlidingAnimation();
+    navigateToHome();
 
   }
+
+
+
   @override
   void dispose() {
     super.dispose();
