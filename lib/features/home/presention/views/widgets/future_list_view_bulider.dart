@@ -8,13 +8,14 @@ class FeatureListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height*.3,
-      child: ListView.builder(
+      height: MediaQuery.of(context).size.height * .3,
+      child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => const Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 8),
-          child:  FeatureListViewItem(),
+        itemBuilder: (context, index) => const FeatureListViewItem(),
+        separatorBuilder: (context, index) => const SizedBox(
+          width: 8,
         ),
+        itemCount: 10,
       ),
     );
   }
